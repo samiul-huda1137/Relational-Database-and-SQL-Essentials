@@ -27,3 +27,6 @@ SELECT NOW() - INTERVAL '1 hour';
 
 SELECT DATE '2022-01-01' + INTERVAL '1 month';
 --Adding an interval of 1 month to a date
+
+SELECT first_name, last_name, gender, country,date_of_birth, AGE(NOW(),date_of_birth) AS age FROM person;
+--This query selects the first name, last name, gender, country, date of birth and calculates the age of each person in the table "person".
