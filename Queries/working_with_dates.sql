@@ -18,3 +18,12 @@ SELECT EXTRACT (DAY FROM NOW());
 
 SELECT EXTRACT (DOW FROM NOW());
 --Extracts the day of the week as a number (0 for Sunday, 1 for Monday, and so on) from the timestamp returned by the NOW() function.
+
+SELECT NOW() + INTERVAL '1 day';
+--Adding an interval of 1 day to a timestamp
+
+SELECT NOW() - INTERVAL '1 hour';
+--Adding an interval of 1 month to a date
+
+SELECT DATE '2022-01-01' + INTERVAL '1 month';
+--Adding an interval of 1 month to a date
