@@ -13,3 +13,5 @@ ALTER TABLE person ADD UNIQUE (email);
 --adds a unique constraint to the 'email' column of the 'person' table to prevent duplicate entries in the column.
 --does not specify a name for the constraint, so the database will generate a name for it automatically.
 
+ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' OR gender = 'Male');
+--adds a CHECK constraint to the gender column in the person table, allowing only 'Female' or 'Male' values.
