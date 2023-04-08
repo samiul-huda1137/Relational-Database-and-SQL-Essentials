@@ -9,3 +9,7 @@ ALTER TABLE person ADD CONSTRAINT unique_email UNIQUE (email);
 --adds a unique constraint to the email column in the person table, which ensures that no two rows can have the same email value.
 --If an attempt is made to insert or update a row with a duplicate email value, an error will be raised.
 
+ALTER TABLE person ADD UNIQUE (email);
+--adds a unique constraint to the 'email' column of the 'person' table to prevent duplicate entries in the column.
+--does not specify a name for the constraint, so the database will generate a name for it automatically.
+
