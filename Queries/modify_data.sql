@@ -9,3 +9,10 @@ UPDATE car SET price = price * 1.1;
 
 DELETE FROM car WHERE id = 5;
 --Delete a specific record from the "car" table with id=5
+
+INSERT INTO person (id, first_name, last_name, email, date_of_birth)
+VALUES (1, 'John', 'Doe', 'john.doe@example.com', '1990-01-01')
+ON CONFLICT (id, email) DO NOTHING;
+--ON CONFLICT statement to handle conflicts that may arise from inserting new records with duplicate values in both the "id" and "email" columns of the "person" table.
+--If a conflict is detected, the statement will DO NOTHING and the existing row will be preserved.
+
