@@ -16,3 +16,11 @@ ON CONFLICT (id, email) DO NOTHING;
 --ON CONFLICT statement to handle conflicts that may arise from inserting new records with duplicate values in both the "id" and "email" columns of the "person" table.
 --If a conflict is detected, the statement will DO NOTHING and the existing row will be preserved.
 
+INSERT INTO person (id, first_name, last_name, email)
+VALUES (1, 'John', 'Doe', 'johndoe@example.com')
+ON CONFLICT (id) DO UPDATE SET
+first_name = EXCLUDED.first_name,
+last_name = EXCLUDED.last_name,
+email = EXCLUDED.email;
+--ON CONFLICT statement to handle conflicts that may arise from inserting new records with duplicate values in both the "id" and "email" columns of the "person" table.
+--If there is a conflict with an existing row based on the id column, the existing row will be updated with the new values for first_name, last_name, and email.
